@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="aldaleel_tree_view">
+        <field name="name">aldaleel.tree</field>
+        <field name="model">aldaleel.location</field>
+        <field name="arch" type="xml">
+            <tree string="aldaleel.location">
+                <field name="QI_fSchoolName"/>
+                <field name="QI_ArabicName"/>
+                <field name="QI_eSchoolID"/>
+                <field name="id1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="aldaleel_location_form">
+        <field name="name">Location Form View</field>
+        <field name="model">aldaleel.location</field>
+        <field name="arch" type="xml">
+            <form string="Location">
+                <sheet>
+                    <h1>
+                        <field name="QI_fSchoolName" placeholder="Location Name"/>
+                    </h1>
+                    <h1><field name="id1" placeholder="Identification number"/></h1>
+                    <h1><field name="QI_ArabicName" placeholder="Arabic name"/></h1>
+                    <h1><field name="QI_eSchoolID" placeholder="Location number"/></h1>
+                    <h1 id="lat"><field name="QII_6Latitude" placeholder="Latitude"/></h1>
+                    <h1 id="long"><field name="QII_5Longitude" placeholder="Longitude"/></h1>
+                    <notebook>
+                        <page string="Map">
+                            <templates>
+                                <!-- <iframe src="https://www.w3schools.com">
+                                    <p>Your browser does not support iframes.</p>
+                                </iframe> -->
+                                <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+                                integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+                                crossorigin=""/>
+                                <div id="mapid" style="height:180px;"></div>
+                                <!-- Make sure you put this AFTER Leaflet's CSS -->
+                                <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+                                integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+                                crossorigin=""></script>
+                                <xpath expr="." position="inside">
+                                    <script type="text/javascript" src="/plants-master/static/js/map.js"></script>
+                                </xpath>
+                                <input type="button" id="btn_load" onClick="load();" value="load map"/>
+                            </templates>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

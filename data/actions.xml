@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem name="ALDALEEL GPS" id="location_root_menu"/>
+
+    <record model="ir.actions.act_window" id="action_aldaleel_location">
+        <field name="name">Locations</field>
+        <field name="res_model">aldaleel.location</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <record model="ir.actions.act_window" id="action_location_customer">
+        <field name="name">Customers</field>
+        <field name="res_model">location.customer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_location_order">
+        <field name="name">Orders</field>
+        <field name="res_model">location.order</field>
+        <field name="view_mode">tree,form</field>
+    </record> -->
+
+    <menuitem name="Locations" id="location_plant_menu" parent="location_root_menu"
+              sequence="1" action="action_aldaleel_location"/>
+
+    <!-- <menuitem name="Customers" id="location_customer_menu" parent="location_root_menu"
+              sequence="2" action="action_location_customer"/> -->
+
+    <!-- <menuitem name="Orders" id="location_order_menu" parent="location_root_menu"
+              sequence="3" action="action_location_order"/> -->
+
+    <!-- <menuitem name="Otro" id="location_plant_menu3" parent="location_root_menu"
+              sequence="4"/>
+
+    <menuitem name="IrPlantas " id="location_plant_menu4" parent="location_plant_menu3"
+              sequence="1" action="action_location_plant"/> -->
+
+</odoo>
